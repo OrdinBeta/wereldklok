@@ -12,7 +12,7 @@ app.use(express.static('../Client/dist/wereldklok/browser'));
 
 const clocks = [
     new Clock('Home', 'Europe/Brussels', 'nl-BE'),
-    new Clock('Sea', 'Pacific/Honolulu', 'nl-BE'),
+    new Clock('Sea', 'Pacific/Honolulu', 'ja'),
 ];
 
 app.get('/my-clocks', cors(), (req, res) => {

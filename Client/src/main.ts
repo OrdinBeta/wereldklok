@@ -8,7 +8,7 @@ import localeJaJp from '@angular/common/locales/ja';
 
 // Registering locale data for Dutch (Belgium) and Japanese (Japan)
 registerLocaleData(localeNlBe, 'nl-BE');
-registerLocaleData(localeJaJp, 'ja-JP');
+registerLocaleData(localeJaJp, 'ja');
 
 bootstrapApplication(AppComponent, appConfig)
     .catch((err) => console.error(err));
