@@ -35,7 +35,7 @@ export class ClocksComponent
             //     this.clocks.push(new Clock(e.name, e.timeZone, e.locale));
             // }
         }
-        console.log(this.clocks);
+        // console.log(this.clocks);
     }
 
     addNewClock(clock: Clock) {
