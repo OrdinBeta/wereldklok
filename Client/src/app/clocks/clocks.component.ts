@@ -20,10 +20,10 @@ export class ClocksComponent
     async ngOnInit() {
         const response = await fetch('http://localhost:' + 3010 + '/my-clocks');
         if (response.ok) {
-            const data: Clock[] = await response.json();
+            // const data: Clock[] = await response.json();
 
             // Lazy lol
-            // this.clocks = data;
+            this.clocks = await response.json();
 
             // Map
             // this.clocks = data.map((clock) => {
@@ -31,9 +31,9 @@ export class ClocksComponent
             // });
 
             // For of loop
-            for (const e of data) {
-                this.clocks.push(new Clock(e.name, e.timeZone, e.locale));
-            }
+            // for (const e of data) {
+            //     this.clocks.push(new Clock(e.name, e.timeZone, e.locale));
+            // }
         }
         console.log(this.clocks);
     }
