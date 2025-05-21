@@ -3,11 +3,11 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 
 import { registerLocaleData } from '@angular/common';
-import localeNlBel from '@angular/common/locales/nl-BE';
+import localeNlBe from '@angular/common/locales/nl-BE';
 import localeJaJp from '@angular/common/locales/ja';
 
 // Registering locale data for Dutch (Belgium) and Japanese (Japan)
-registerLocaleData(localeNlBel, 'nl-BE');
+registerLocaleData(localeNlBe, 'nl-BE');
 registerLocaleData(localeJaJp, 'ja-JP');
 
 bootstrapApplication(AppComponent, appConfig)
