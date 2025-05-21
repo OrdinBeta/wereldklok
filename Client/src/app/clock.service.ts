@@ -19,7 +19,12 @@ export class ClockService {
 
     // Using async/await
     // Withoud rxjs observable
-    getClocks(): Promise<Clock[]> {
-        return firstValueFrom(this.http.get<Clock[]>(`${this.url}/my-clocks`));
+    async getClocks(): Promise<Clock[]> {
+        const clocks: Clock[] = [];
+        for (const e of await firstValueFrom(this.getClocks$())) {
+            clocks.push(new Clock(e.name, e.timeZone, e.locale));
+        }
+
+        return clocks;
     }
 }
