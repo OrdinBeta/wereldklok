@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="clockName">Clock Name:</label>
+        <input type="text" id="clockName" name="clockName" [(ngModel)]="model.name">
+    </div>
+    <div>
+        <label for="timeZone">Time Zone:</label>
+        <select name="timeZone" id="timeZone" [(ngModel)]="model.timeZone">
+            @for (tz of timeZones; track tz) {
+            <option [value]="tz">{{tz}}</option>
+            }
+        </select>
+    </div>
+    <div>
+        @for (l of locales; track l) {
+        <label [for]="`locale${l}`">{{l}}</label>
+        <input type="radio" name="locale" [id]="`locale${l}`" [value]="l" [(ngModel)]="model.locale">
+        }
+    </div>
+    <div>
+        <input type="submit" value="Add Clock">
+    </div>
+</form>

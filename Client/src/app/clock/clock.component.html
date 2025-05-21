@@ -1,0 +1,13 @@
+<section [className]="isNight ? 'dark' : 'light'">
+
+    <h3>{{ clock.timeZone }}</h3>
+    <p>
+        @if (isNight) { 🌙 }
+        @else { 🌞 }
+        {{ time.toLocaleString(clock.locale, {timeZone: clock.timeZone}) }}
+    </p>
+    <button type="button" (click)="changeLocale('nl-BE')">België</button>
+    <button type="button" (click)="changeLocale('en-US')">US</button>
+    <button type="button" (click)="changeLocale('JA')">Japan</button>
+    <button type="button" (click)="remove()">X</button>
+</section>

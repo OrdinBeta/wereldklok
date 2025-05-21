@@ -1,0 +1,15 @@
+ul#clocks {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+ul#clocks>* {
+    flex: 1 1 auto;
+}
+
+section {
+    margin: 1em 0;
+}

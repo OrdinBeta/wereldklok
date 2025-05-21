@@ -1,0 +1,34 @@
+<section>
+    <h2>Examples</h2>
+    <ul>
+        <li>Europe/Brussels, nl-BE</li>
+        <li>America/New_York, en-US</li>
+        <li>Japan, JA</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Add times</h2>
+    <!-- <label for="newTimeZone">Time Zone</label>
+    <input type="text" name="newTimeZone" id="newTimeZone" [(ngModel)]="newTimeZone" placeholder="Europe/Brussels">
+    <label for="newLocale">Locale</label>
+    <input type="text" name="newLocale" id="newLocale" [(ngModel)]="newLocale" placeholder="nl-BE">
+    <button (click)="addNewTime()">Voeg toe</button> -->
+    <app-add-clock-to-form (chosenClock)="addNewClock($event)"></app-add-clock-to-form>
+</section>
+
+<section>
+    <h2>Clocks</h2>
+    <ul id="clocks">
+        <!-- @for (time of times; track $index) {
+        <li>
+            <app-clock [timeZone]="time[0]" [locale]="time[1]" (removed)="removeChild(time[0])"></app-clock>
+        </li>
+        } -->
+        @for (clock of clocks; track clock) {
+        <li>
+            <app-clock [clock]="clock" (removed)="removeChild(clock.timeZone)"></app-clock>
+        </li>
+        }
+    </ul>
+</section>
