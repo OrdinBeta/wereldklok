@@ -14,7 +14,7 @@ const clocks = [
     new Clock('Home', 'Europe/Brussels', 'nl-BE'),
 ];
 
-app.get('/my-clocks', (req, res) => {
+app.get('/my-clocks', cors(), (req, res) => {
     res.json(clocks);
 });
 
