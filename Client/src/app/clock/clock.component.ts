@@ -1,9 +1,10 @@
 import { Component, Input, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Clock } from '../clock';
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-clock',
-    imports: [],
+    imports: [DatePipe],
     templateUrl: './clock.component.html',
     styleUrl: './clock.component.css'
 })
