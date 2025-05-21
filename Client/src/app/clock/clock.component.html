@@ -6,7 +6,7 @@
         @else { 🌞 }
         <!-- {{ time.toLocaleString(clock.locale, {timeZone: clock.timeZone}) }} -->
         <!-- Pipe has been laid -->
-        {{ time | date: 'medium' : clock.timeZoneUtc : clock.locale }}
+        {{ time | date : 'medium' : clock.timeZoneUtc : clock.locale }}
     </p>
     <button type="button" (click)="changeLocale('nl-BE')">België</button>
     <button type="button" (click)="changeLocale('en-US')">US</button>
