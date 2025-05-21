@@ -15,29 +15,28 @@ export class ClocksComponent
     OnInit {
     title = 'wereldklok';
 
-    // times: Array<[timeZone: string, locale: string]> = [
-    //     // ["Europe/Brussels", 'nl-BE'],
-    //     // ["America/New_York", 'en-US'],
-    //     // ["Japan", 'JA']
-    // ];
-
-    // // Default values for the new time zone and locale
-    // newTimeZone: string = 'Europe/Brussels';
-    // newLocale: string = 'nl-BE';
-
     clocks: Clock[] = [];
 
     async ngOnInit() {
-        const response = await fetch('http://localhost:' + 3000 + '/my-clocks');
+        const response = await fetch('http://localhost:' + 3010 + '/my-clocks');
         if (response.ok) {
             const data: Clock[] = await response.json();
-            this.clocks = data;
-        }
-    }
 
-    // addNewTime() {
-    //     this.times.push([this.newTimeZone, this.newLocale]);
-    // }
+            // Lazy lol
+            // this.clocks = data;
+
+            // Map
+            // this.clocks = data.map((clock) => {
+            //     return new Clock(clock.name, clock.timeZone, clock.locale);
+            // });
+
+            // For of loop
+            for (const e of data) {
+                this.clocks.push(new Clock(e.name, e.timeZone, e.locale));
+            }
+        }
+        console.log(this.clocks);
+    }
 
     addNewClock(clock: Clock) {
         this.clocks.push(clock);
