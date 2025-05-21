@@ -1,5 +1,6 @@
 import express from 'express';
 import { Clock } from './clock.js';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
